@@ -1,2 +1,2 @@
 # Zephi-Sero.github.io
-please
+thank god
