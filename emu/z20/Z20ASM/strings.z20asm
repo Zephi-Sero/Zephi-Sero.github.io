@@ -1,0 +1,8 @@
+JMP #EndData
+#label HelloWorld
+["Hello, World!"]
+#label Gordon
+["Hello Gordon!"]
+#label Chicken
+["Got a bucket of chicken. Let's do this."]
+#label EndData

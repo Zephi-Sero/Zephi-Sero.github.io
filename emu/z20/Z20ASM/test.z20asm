@@ -1,0 +1,18 @@
+#include strings.z20asm ; Include basic strings
+#define RAM 0x80    ; RAM location
+
+#label Start        ; Start of program
+    MOV #Chicken O  ; Indexed with the start of the data section
+    MOV (O+X) O     ; Copy character to O
+    ZER             ; Zero accumulator
+    ADD O           ; Add the value of character
+    JMZ #Halt       ; End program if null terminator
+    MOV O (#RAM+X)  ; Copy character to (0x80+X)
+    SWP L B         ; Unbackup accumulator
+    INC             ; Increment
+    MOV L X         ; Copy index to indexing reg
+    SWP L B         ; Backup accumulator
+    JMP #Start      ; Go to next character
+
+#label Halt         ; End of program / halt instruction
+    HLT             ; End program
